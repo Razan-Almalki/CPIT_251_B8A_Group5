@@ -1,14 +1,10 @@
 package b8a_group5;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
 public class B8A_group5 {
-
     int ID;
-
     public static void main(String[] args) throws FileNotFoundException {
         Scanner s = new Scanner(System.in);
         File output_file = new File("Results.txt");//create file object for output
@@ -17,12 +13,10 @@ public class B8A_group5 {
         Appintment_information[0] = "0- Dr.Razan, 10.11.2022 ,8 PM";
         Appintment_information[1] = "1- Dr.Ruba, 15.11.2022 ,9 PM";
         Appintment_information[2] = "2- Dr.Raghad, 29.11.2022 ,7 PM";
-
         String[] appointmentAnOnlineCon = new String[3];
         appointmentAnOnlineCon[0] = "0- Dr.Sky , Monday , 10.11.2021 , 7 pm";
         appointmentAnOnlineCon[1] = "1- Dr.Will , sunday , 9.11.2021 , 9 pm";
-        appointmentAnOnlineCon[2] = "2- Dr.Hana , Thursday , 14.11.2021 , 6 pm";
-        
+        appointmentAnOnlineCon[2] = "2- Dr.Hana , Thursday , 14.11.2021 , 6 pm";    
         String[] BloodTest = new String[3];
         BloodTest[0]
                 = "       TEST(Lama)                 RESULT     PEFERRENCE INTERVAL\n"
@@ -60,7 +54,6 @@ public class B8A_group5 {
                 + "Albumin, Serum                    4.9            3.5-5.5\n"
                 + "Globulin, Serum                   2.7            1.5-4.5\n"
                 + "A/G Ratio                         1.8            1.1-2.5";
-
         //The main menu
         System.out.println("---------------- Welcome to Hospital Application ----------------");
         System.out.println("1. Appintments Booking ");
@@ -70,7 +63,6 @@ public class B8A_group5 {
         System.out.println("5. exit");
         System.out.println("------------------------------------------------------------------");
         System.out.print("Please choose the service: ");
-
         int choose = s.nextInt();
         do {
             if (choose == 1) {
@@ -79,21 +71,18 @@ public class B8A_group5 {
                 String h = Appintments(s, Appintment_information);
                 Writer.print("the selected Appintment is: " + h+"\n");
             }
-
             if (choose == 2) {
                 System.out.println("Service: Online consultation");
                 Writer.println("Service: Online consultation");
                 String store = consultation(appointmentAnOnlineCon);
                 Writer.print("the selected Online consultation is: " + store+"\n");
             }
-
             if (choose == 3) {
                 System.out.println("Service: Accessc Patient Profile");
                 Writer.println("Service: Accessc Patient Profile");
                 String profile = PatientProfile();
                 Writer.print("the  profile is : \n" + profile+"\n");
             }
-
             if (choose == 4) {
                 System.out.println("Service: Blood Test Result");
                 Writer.println("Service: Blood Test Result");
@@ -103,15 +92,12 @@ public class B8A_group5 {
                 System.out.print(BloodTestresult);
                 Writer.print(BloodTestresult);
             }
-
             System.out.print("Please choose other service or 5 to exit: ");
             choose = s.nextInt();
             Writer.flush();
         } while (!(choose == 5));
         Writer.print("thank you for your time ...");
-    }
-    
-
+    }    
     public static String Appintments(Scanner s, String Appintment_information[]) {
         for (int i = 0; i < Appintment_information.length; i++) {
             System.out.println("The Appintments are:  ");
@@ -125,7 +111,6 @@ public class B8A_group5 {
         Appintment_information[choice] = "This Appintment has been reserved! ";
         return store;
     }
-
     public static String consultation(String appointmentAnOnlineCon[]) {
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < appointmentAnOnlineCon.length; i++) {
@@ -133,20 +118,17 @@ public class B8A_group5 {
             System.out.println(appointmentAnOnlineCon[i]);
             System.out.println("-------------------------------------------");
         }
-
         System.out.print("Choose an online appointment from 0 to 2 = ");
         int onlineAppo = s.nextInt();
         String storeS = appointmentAnOnlineCon[onlineAppo];
         System.out.println("The selected online appointment has been added to your Profile");
         appointmentAnOnlineCon[onlineAppo] = "Is unavilable";
-
         System.out.println("-------------------------------------------");
         int costOfServices = 350;
         System.out.print("The Online consultation cost ");
         System.out.println(costOfServices);
         System.out.print("write the payment amount = ");
         int payAmount = s.nextInt();
-
         if (payAmount == costOfServices) {
             int sub = payAmount - costOfServices;
             System.out.println("The amount has been deducted");
@@ -158,36 +140,26 @@ public class B8A_group5 {
             }
             System.out.println("The correct amount has been deducted");
         }
-        int storeI = costOfServices;
-        
-        String Stores = storeS +" payment = "+ storeI;
-        
+        int storeI = costOfServices;       
+        String Stores = storeS +" payment = "+ storeI;   
         return Stores;
-
     }
-
-
     public static String PatientProfile() {
- 
         String PaitnetInfo[] = new String[3];
         Scanner input = new Scanner(System.in); 
-        String Store ="";
-             
-           
+        String Store ="";      
         PaitnetInfo[0] = "Name: Lama\n"
                 + "Age: 23\n"
                 + "Gender: Female\n"
                 + "Highet: 160 cm\n"
                 + "Weight: 55 kg\n"
                 + "Blood Type: O\n";
-
         PaitnetInfo[1] = "Name: Ahmed\n"
                 + "Age: 27\n"
                 + "Gender: Male\n"
                 + "Highet: 180 cm\n"
                 + "Weight: 70 kg\n"
                 + "Blood Type: A\n";
-
         PaitnetInfo[2] = "Name: Sarah\n"
                 + "Age: 25\n"
                 + "Gender: Female\n"
@@ -195,31 +167,21 @@ public class B8A_group5 {
                 + "Weight: 52 kg\n"
                 + "Blood Type: O+\n";
         System.out.print("Enter Patient ID: ");
-       
         int  patientID = input.nextInt();
         checkPatientID(patientID);
         boolean result = false;
             do {
                 if (checkPatientID(patientID) == false) {
-
                 System.out.println("please Try again!");
                 System.out.print("Enter Patient ID: ");
                 patientID = input.nextInt();
-
                 } else {
                    result = checkPatientID(patientID) ;
                 }
-            } while (result == false);
-            
+            } while (result == false);           
             System.out.println( "\n"+PaitnetInfo[patientID]);
-            
             Store = PaitnetInfo[patientID];
-            return Store;
-            
-        
-        
-       
-
+            return Store;     
     }
     public static boolean checkPatientID(int patienid) {
         if (patienid == 0 || patienid == 1 || patienid == 2) {
@@ -227,24 +189,19 @@ public class B8A_group5 {
         } else {
             return false;
         }
-
     }
-
     public B8A_group5(int ID) {
         this.ID = ID;
     }
      public static String BloodTest(int ID, Scanner s, String BloodTest []) {
         String Pname = "";
-        
          if(BloodTest[ID]==BloodTest[0]){
              Pname="Lama";
          }else if (BloodTest[ID]==BloodTest[1]){
              Pname="Ahmed";
          }else if (BloodTest[ID]==BloodTest[2]){
              Pname="Sarah";
-         }
- 
+         } 
         return "Here is Patient "+Pname+" with ID number "+ID+" blood test: \n"+BloodTest[ID]+'\n';
       }
-
 }
