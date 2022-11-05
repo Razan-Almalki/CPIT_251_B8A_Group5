@@ -1,6 +1,4 @@
-
 package b8a_group5;
-
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import org.junit.After;
@@ -10,29 +8,21 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Ignore;
-
-
-public class B8A_group5Test {
-    
+public class B8A_group5Test {   
     public B8A_group5Test() {
-    }
-    
+    } 
     @BeforeClass
     public static void setUpClass() {
-    }
-    
+    } 
     @AfterClass
     public static void tearDownClass() {
-    }
-    
+    }  
     @Before
     public void setUp() {
-    }
-    
+    } 
     @After
     public void tearDown() {
     }
-
     /**
      * Test of main method, of class B8A_group5.
      */
@@ -42,10 +32,7 @@ public class B8A_group5Test {
         System.out.println("main");
         String[] args = null;
         B8A_group5.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
     }
-
     /**
      * Test of Appintments method, of class B8A_group5.
      */
@@ -60,10 +47,8 @@ public class B8A_group5Test {
        int user_selection=0;
         String expResult = "0- Dr.Razan, 10.11.2022 ,8 PM";
         String result =  Appintment_information[user_selection];
-        assertEquals(expResult, result);
-     
+        assertEquals(expResult, result);   
     }
-
     /**
      * Test of consultation method, of class B8A_group5.
      */
@@ -75,7 +60,6 @@ public class B8A_group5Test {
         int result = costOfServices - costOfServices;
         assertEquals(expResult, result);
     }
-
     /**
      * Test of PatientProfile method, of class B8A_group5.
      */
@@ -93,9 +77,7 @@ public class B8A_group5Test {
         assertTrue(B8A_group5.checkPatientID(2));
         // testing for a value out of the range 
         assertFalse(B8A_group5.checkPatientID(4));
-
     }
-
     /**
      * Test of BloodTest method, of class B8A_group5.
      */
@@ -118,6 +100,5 @@ public class B8A_group5Test {
                  + "A/G Ratio                         1.6            1.1-2.5";
         String result = instance.toString();
         assertNotSame(expResult, result);
-    }
-    
+    }   
 }
