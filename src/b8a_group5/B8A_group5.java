@@ -22,16 +22,7 @@ public class B8A_group5 {
         appointmentAnOnlineCon[0] = "0- Dr.Sky , Monday , 10.11.2021 , 7 pm";
         appointmentAnOnlineCon[1] = "1- Dr.Will , sunday , 9.11.2021 , 9 pm";
         appointmentAnOnlineCon[2] = "2- Dr.Hana , Thursday , 14.11.2021 , 6 pm";
-
-        System.out.println("---------------- Welcome to Hospital Application ----------------");
-        System.out.println("1. Appintments Booking ");
-        System.out.println("2. Online consultation  ");
-        System.out.println("3. Accessc Patient Profile  ");
-        System.out.println("4. Blood Test Result");
-        System.out.println("5. exit");
-        System.out.println("------------------------------------------------------------------");
-        System.out.print("Please choose the service: ");
-
+        
         String[] BloodTest = new String[3];
         BloodTest[0]
                 = "       TEST(Lama)                 RESULT     PEFERRENCE INTERVAL\n"
@@ -70,6 +61,16 @@ public class B8A_group5 {
                 + "Globulin, Serum                   2.7            1.5-4.5\n"
                 + "A/G Ratio                         1.8            1.1-2.5";
 
+        //The main menu
+        System.out.println("---------------- Welcome to Hospital Application ----------------");
+        System.out.println("1. Appintments Booking ");
+        System.out.println("2. Online consultation  ");
+        System.out.println("3. Accessc Patient Profile  ");
+        System.out.println("4. Blood Test Result");
+        System.out.println("5. exit");
+        System.out.println("------------------------------------------------------------------");
+        System.out.print("Please choose the service: ");
+
         int choose = s.nextInt();
         do {
             if (choose == 1) {
@@ -77,7 +78,6 @@ public class B8A_group5 {
                 Writer.println("Service: Appintments Booking");
                 String h = Appintments(s, Appintment_information);
                 Writer.print("the selected Appintment is: " + h+"\n");
-
             }
 
             if (choose == 2) {
@@ -92,7 +92,6 @@ public class B8A_group5 {
                 Writer.println("Service: Accessc Patient Profile");
                 String profile = PatientProfile();
                 Writer.print("the  profile is : \n" + profile+"\n");
-
             }
 
             if (choose == 4) {
@@ -100,8 +99,9 @@ public class B8A_group5 {
                 Writer.println("Service: Blood Test Result");
                 System.out.print("Enter Your ID Number: ");
                 int ID = s.nextInt();
-                System.out.print(BloodTest(ID, s, BloodTest));
-                //  Writer.print("the selected Blood Test is: "+b);
+                String BloodTestresult = BloodTest(ID, s, BloodTest);
+                System.out.print(BloodTestresult);
+                Writer.print(BloodTestresult);
             }
 
             System.out.print("Please choose other service or 5 to exit: ");
@@ -233,7 +233,6 @@ public class B8A_group5 {
     public B8A_group5(int ID) {
         this.ID = ID;
     }
-    
      public static String BloodTest(int ID, Scanner s, String BloodTest []) {
         String Pname = "";
         
@@ -244,8 +243,8 @@ public class B8A_group5 {
          }else if (BloodTest[ID]==BloodTest[2]){
              Pname="Sarah";
          }
-        
-        return "Here is Patient "+Pname+" with ID number "+ID+" blood test: \n"+BloodTest[ID]+'\n' ;
+ 
+        return "Here is Patient "+Pname+" with ID number "+ID+" blood test: \n"+BloodTest[ID]+'\n';
       }
 
 }
