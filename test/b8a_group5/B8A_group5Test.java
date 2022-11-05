@@ -37,6 +37,7 @@ public class B8A_group5Test {
      * Test of main method, of class B8A_group5.
      */
     @Test
+    @Ignore
     public void testMain() throws FileNotFoundException {
         System.out.println("main");
         String[] args = null;
@@ -98,7 +99,7 @@ public class B8A_group5Test {
     /**
      * Test of BloodTest method, of class B8A_group5.
      */
-    @Test
+    @Test(timeout=10)
      public void testBloodTest() {
         System.out.println("BloodTest");
         B8A_group5 instance = new B8A_group5(1);
