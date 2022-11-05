@@ -1,7 +1,7 @@
 Service: Appintments Booking
 the selected Appintment is: 0- Dr.Razan, 10.11.2022 ,8 PM
 Service: Online consultation
-the selected Online consultation is: 0- Dr.Sky , Monday , 10.11.2021 , 7 pm payment = 350
+the selected Online consultation is: 1- Dr.Will , sunday , 9.11.2021 , 9 pm payment = 350
 Service: Accessc Patient Profile
 the  profile is : 
 Name: Lama
@@ -12,15 +12,15 @@ Weight: 55 kg
 Blood Type: O
 
 Service: Blood Test Result
-Here is Patient Lama with ID number 0 blood test: 
-       TEST(Lama)                 RESULT     PEFERRENCE INTERVAL
-Comp. Metabolic Panel (14)        90             65-99
-Sodium, Serum                     131            135-145
-Potassium, Serum                  4              3.5-5.2
-Chloride, Serum                   99            97-108
-Carbon Dioxide, Serum             23             20-32
-Calcium, Serum                    10.0            8.7-10.2
-Protein, Serum                    6.6            6.0-8.5
+Here is Patient Ahmed with ID number 1 blood test: 
+       TEST(Ahmed)                RESULT     PEFERRENCE INTERVAL
+Comp. Metabolic Panel (14)        77             65-99
+Sodium, Serum                     145            135-145
+Potassium, Serum                  3.8            3.5-5.2
+Chloride, Serum                   105            97-108
+Carbon Dioxide, Serum             30             20-32
+Calcium, Serum                    8.9            8.7-10.2
+Protein, Serum                    7.6            6.0-8.5
 Albumin, Serum                    4.9            3.5-5.5
 Globulin, Serum                   2.7            1.5-4.5
-A/G Ratio                         2.1            1.1-2.5
+A/G Ratio                         1.6            1.1-2.5
