@@ -1,6 +1,7 @@
 
 package b8a_group5;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,12 +37,12 @@ public class B8A_group5Test {
      * Test of main method, of class B8A_group5.
      */
     @Test
-    public void testMain() {
+    public void testMain() throws FileNotFoundException {
         System.out.println("main");
         String[] args = null;
         B8A_group5.main(args);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
