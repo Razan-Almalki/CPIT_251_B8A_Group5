@@ -1,19 +1,23 @@
 package b8a_group5;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class B8A_group5 {
 
     int ID;
-    
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner s = new Scanner(System.in);
-        
+        File output_file = new File("Results.txt");//create file object for output
+        PrintWriter Writer = new PrintWriter(output_file);//to write in the output file
         String Appintment_information[] = new String[3];
         Appintment_information[0] = "0- Dr.Razan, 10.11.2022 ,8 PM";
         Appintment_information[1] = "1- Dr.Ruba, 15.11.2022 ,9 PM";
         Appintment_information[2] = "2- Dr.Raghad, 29.11.2022 ,7 PM";
-        
+
         String[] appointmentAnOnlineCon = new String[3];
         appointmentAnOnlineCon[0] = "0- Dr.Sky , Monday , 10.11.2021 , 7 pm";
         appointmentAnOnlineCon[1] = "1- Dr.Will , sunday , 9.11.2021 , 9 pm";
@@ -27,12 +31,10 @@ public class B8A_group5 {
         System.out.println("5. exit");
         System.out.println("------------------------------------------------------------------");
         System.out.print("Please choose the service: ");
-        
-        
 
-        String [] BloodTest = new String [3];
-        BloodTest[0] = 
-                  "       TEST(Lama)                 RESULT     PEFERRENCE INTERVAL\n"
+        String[] BloodTest = new String[3];
+        BloodTest[0]
+                = "       TEST(Lama)                 RESULT     PEFERRENCE INTERVAL\n"
                 + "Comp. Metabolic Panel (14)        90             65-99\n"
                 + "Sodium, Serum                     131            135-145\n"
                 + "Potassium, Serum                  4              3.5-5.2\n"
@@ -43,8 +45,8 @@ public class B8A_group5 {
                 + "Albumin, Serum                    4.9            3.5-5.5\n"
                 + "Globulin, Serum                   2.7            1.5-4.5\n"
                 + "A/G Ratio                         2.1            1.1-2.5";
-         BloodTest[1] = 
-                  "       TEST(Ahmed)                RESULT     PEFERRENCE INTERVAL\n"
+        BloodTest[1]
+                = "       TEST(Ahmed)                RESULT     PEFERRENCE INTERVAL\n"
                 + "Comp. Metabolic Panel (14)        77             65-99\n"
                 + "Sodium, Serum                     145            135-145\n"
                 + "Potassium, Serum                  3.8            3.5-5.2\n"
@@ -55,8 +57,8 @@ public class B8A_group5 {
                 + "Albumin, Serum                    4.9            3.5-5.5\n"
                 + "Globulin, Serum                   2.7            1.5-4.5\n"
                 + "A/G Ratio                         1.6            1.1-2.5";
-         BloodTest[2] = 
-                  "       TEST(Sarah)                RESULT     PEFERRENCE INTERVAL\n"
+        BloodTest[2]
+                = "       TEST(Sarah)                RESULT     PEFERRENCE INTERVAL\n"
                 + "Comp. Metabolic Panel (14)        84             65-99\n"
                 + "Sodium, Serum                     141            135-145\n"
                 + "Potassium, Serum                  4.4            3.5-5.2\n"
@@ -67,39 +69,48 @@ public class B8A_group5 {
                 + "Albumin, Serum                    4.9            3.5-5.5\n"
                 + "Globulin, Serum                   2.7            1.5-4.5\n"
                 + "A/G Ratio                         1.8            1.1-2.5";
-        
+
         int choose = s.nextInt();
         do {
             if (choose == 1) {
                 System.out.println("Service: Appintments Booking");
+                Writer.println("Service: Appintments Booking");
                 String h = Appintments(s, Appintment_information);
+                Writer.print("the selected Appintment is: " + h+"\n");
 
             }
 
             if (choose == 2) {
                 System.out.println("Service: Online consultation");
+                Writer.println("Service: Online consultation");
                 String store = consultation(appointmentAnOnlineCon);
+                Writer.print("the selected Online consultation is: " + store+"\n");
             }
 
             if (choose == 3) {
-                System.out.println("Service: Accessc Patient Profile");   
+                System.out.println("Service: Accessc Patient Profile");
+                Writer.println("Service: Accessc Patient Profile");
                 String profile = PatientProfile();
+                Writer.print("the  profile is : \n" + profile+"\n");
 
             }
 
             if (choose == 4) {
                 System.out.println("Service: Blood Test Result");
+                Writer.println("Service: Blood Test Result");
                 System.out.print("Enter Your ID Number: ");
                 int ID = s.nextInt();
-                System.out.print(BloodTest(ID,s,BloodTest));
+                System.out.print(BloodTest(ID, s, BloodTest));
+                //  Writer.print("the selected Blood Test is: "+b);
             }
 
             System.out.print("Please choose other service or 5 to exit: ");
             choose = s.nextInt();
-
+            Writer.flush();
         } while (!(choose == 5));
-
+        Writer.print("thank you for your time ...");
     }
+    
 
     public static String Appintments(Scanner s, String Appintment_information[]) {
         for (int i = 0; i < Appintment_information.length; i++) {
